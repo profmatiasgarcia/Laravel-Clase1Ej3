@@ -1,0 +1,124 @@
+/*Copyright (C) 2019 Prof Matias Garcia para -http://www.profmatiasgarcia.com.ar- con licencia GNU GPL3. 
+Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General de GNU según es publicada por la Free Software Foundation, bien con la versión 3 de dicha Licencia o bien (según su elección) con cualquier versión posterior. Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin garantizar la CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la Licencia Pública General de GNU para más detalles.
+Debería haber recibido una copia de la Licencia Pública General junto con este programa. Si no ha sido así ingrese a -http://www.gnu.org/licenses/- */
+@charset "UTF-8";
+
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,img,ins,kbd,q,s,samp,small,strike,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+body{line-height:1}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+table{border-collapse:collapse;border-spacing:0}
+
+.clear {
+	clear: both;	/* a 'utility' class that stops 'float' and places next item below */
+}
+
+
+/* 	MAIN CSS */
+/*	note: due to CSS reset, we do have to specify a lot more basic things, such as the
+	size of <h1> and <p> */
+html, body {
+	background-color: rgb(150,150,150);
+	font-family: Helvetica, Arial, sans-serif;		/* declare font for the entire document */
+}
+
+h1 {
+	font-size: 3em;				/* measuring ems to be more flexible for all users 3em = 48/16 */
+}
+
+h2 {
+	font-size: 1.75em;			/* 28/16 */
+}
+
+p {
+	font-size: 0.875em;			/* 14/16 */
+	line-height: 1.3em;			/* a good rule of thumb for body text */
+	margin-bottom: 1.5em;
+}
+
+a, a:link, a:visited {
+	color: rgb(255,0,0);
+	text-decoration: none;
+}
+a:active, a:hover {
+	color: rgb(255,150,0);
+	text-decoration: none;
+}
+
+/* 	WRAPPER */
+/* 	this has the usual width and float to center stuff */
+#wrapper {
+	width: 900px;
+	margin: 0px auto 30px auto;			/* even spacing on either side (centers the div) with some space at bottom */
+	background-color: white;
+}
+
+/* 	HEADER */
+/* 	the header will have the site's main title and a horizontal menu */
+header {
+	background-color: rgb(120,30,110);
+	padding: 20px;
+}
+
+/* 	different link settings for header - this essentially says "style links (the <a> tag) that are
+	headline-1 (the <h1> tag) inside the header section (the <header> tag)" */
+header h1 a, header h1 a:link, header h1 a:visited {
+	color: black;
+	text-decoration: none;
+}
+header h1 a:active, header h1 a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+/* 	advanced: a horizontal menu using unordered list */
+header ul {
+	margin: 10px 0 -10px 0;  			/* add some space at the top, squish the menu down to the bottom */
+}
+header li {
+	display: inline;					/* this makes the list horizontal */
+	list-style: none;	  				/* gets rid of bullets, but not needed due to CSS reset! */
+	padding-right: 20px;				/* space in between */
+}
+
+
+/* 	SIDEBAR */
+/* 	the sidebar can go on the L or R side and usually has a menu and/or meta info */
+#sidebar {
+	float: left;
+	width: 200px;
+	background-color: white;
+	padding: 20px;
+
+	border-right: 1px solid black;
+}
+
+/* 	format lists for menu ONLY in the sidebar */
+#sidebar ul {
+	margin: -1em 0 2em 0;				/* typical hacking w/ CSS: move list up -1em (16px) to */
+	border-top: 1px dashed rgb(255,150,0);		/* remove spacing from the <p> tag, add more space on bototm */
+}
+#sidebar li {
+	padding: 10px 0;					/* add 10px padding top/bottom, no padding right/left */
+	border-bottom: 1px solid rgb(230,230,230);
+}
+
+/* 	MAIN CONTENT */
+/* 	this is where your main stuff would go, be it an article, a video, or a product */
+#content {
+	float: left;						/* also float left so it goes next to the sidebar */
+	width: 619px;						/* this should be the wrapper minus sidebar and padding on both */
+	background-color: white;
+	padding: 20px;
+	text-align: justify;
+}
+
+/* 	FOOTER */
+/* 	the footer sits at the bottom */
+#footer {
+	background-color: rgb(120,30,110);		/* same as header */
+	padding: 20px;
+}
